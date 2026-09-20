@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carlos — Backend Developer</title>
-  <meta name="description" content="Portfolio de Carlos (RaclosDev) — Backend Developer especializado en Java, Spring Boot y React. Creador de Ascension, MiPorrApp y FlashForge." />
+  <title>Carlos — Fullstack Developer</title>
+  <meta name="description" content="Portfolio de Carlos (RaclosDev) — Fullstack Developer especializado en Java, Spring Boot, React y Gemini AI. Creador de Ascension, LoopDeck y MiPorrApp." />
   <meta name="author" content="Carlos" />
-  <meta property="og:title" content="Carlos — Backend Developer" />
-  <meta property="og:description" content="Portfolio de Carlos — Backend Developer (Java/Spring Boot). Proyectos fullstack con React, PostgreSQL y más." />
+  <meta property="og:title" content="Carlos — Fullstack Developer" />
+  <meta property="og:description" content="Portfolio de Carlos — Fullstack Developer (Java/Spring Boot/React). PWAs con IA, notificaciones push, repetición espaciada y más." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://raclosdev.github.io" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,13 +46,14 @@
         Hola, soy <span class="hero__name">Carlos</span>
       </h1>
       <p class="hero__subtitle">
-        <span class="hero__role">Backend Developer</span>
+        <span class="hero__role">Fullstack Developer</span>
         <span class="hero__separator">·</span>
-        <span class="hero__stack">Java / Spring Boot / React</span>
+        <span class="hero__stack">Java / Spring Boot / React / Gemini AI</span>
       </p>
       <p class="hero__description">
         Desarrollo aplicaciones fullstack con <strong>Java</strong> y <strong>Spring Boot</strong> en el backend, 
-        <strong>React</strong> en el frontend y despliegue con <strong>Docker</strong>. 
+        <strong>React 19</strong> con <strong>Tailwind CSS</strong> en el frontend, 
+        integración de <strong>Gemini AI</strong> y despliegue como <strong>PWA</strong> con Docker. 
         Me apasiona crear productos funcionales de principio a fin.
       </p>
       <div class="hero__actions">
@@ -76,11 +77,12 @@
         </div>
         <pre class="code-window__body"><code><span class="code-kw">public class</span> <span class="code-cls">RaclosDev</span> {
 
-  <span class="code-kw">private</span> String role = <span class="code-str">"Backend Dev"</span>;
+  <span class="code-kw">private</span> String role = <span class="code-str">"Fullstack Dev"</span>;
   <span class="code-kw">private</span> String[] stack = {
-    <span class="code-str">"Java"</span>, <span class="code-str">"Spring Boot"</span>,
-    <span class="code-str">"React"</span>, <span class="code-str">"PostgreSQL"</span>,
-    <span class="code-str">"Docker"</span>, <span class="code-str">"REST APIs"</span>
+    <span class="code-str">"Java 21"</span>, <span class="code-str">"Spring Boot 3"</span>,
+    <span class="code-str">"React 19"</span>, <span class="code-str">"Tailwind CSS"</span>,
+    <span class="code-str">"Gemini AI"</span>, <span class="code-str">"PostgreSQL"</span>,
+    <span class="code-str">"Docker"</span>, <span class="code-str">"PWA"</span>
   };
 
   <span class="code-kw">public</span> String <span class="code-fn">getPassion</span>() {
@@ -98,19 +100,23 @@
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">Spring Boot</span>
       <span class="tech-strip__sep">◆</span>
-      <span class="tech-strip__item">React</span>
+      <span class="tech-strip__item">React 19</span>
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">TypeScript</span>
+      <span class="tech-strip__sep">◆</span>
+      <span class="tech-strip__item">Tailwind CSS</span>
+      <span class="tech-strip__sep">◆</span>
+      <span class="tech-strip__item">Gemini AI</span>
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">PostgreSQL</span>
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">Docker</span>
       <span class="tech-strip__sep">◆</span>
-      <span class="tech-strip__item">REST APIs</span>
+      <span class="tech-strip__item">TanStack Query</span>
+      <span class="tech-strip__sep">◆</span>
+      <span class="tech-strip__item">PWA / Workbox</span>
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">JWT / OAuth2</span>
-      <span class="tech-strip__sep">◆</span>
-      <span class="tech-strip__item">Kafka</span>
       <span class="tech-strip__sep">◆</span>
       <span class="tech-strip__item">Git</span>
     </div>
@@ -136,36 +142,42 @@
               </div>
               <div>
                 <h3 class="project-card__title">Ascension</h3>
-                <p class="project-card__tagline">Tracker de Fitness & Nutrición</p>
+                <p class="project-card__tagline">Fitness, Nutrición & IA</p>
               </div>
             </div>
             <p class="project-card__description">
-              Aplicación fullstack para el seguimiento de entrenamientos, nutrición y progreso corporal. 
-              Incluye un planificador de ejercicios con historial, temporizador de descanso, 
-              integración con la <strong>API de FatSecret</strong> para registro de comidas, 
-              gráficas de progreso y sincronización en la nube con autenticación JWT.
+              PWA fullstack para el seguimiento de entrenamientos, nutrición y progreso corporal. 
+              Integra un <strong>asistente de IA con Google Gemini</strong> que sugiere comidas por texto, voz o foto del plato, 
+              un temporizador de descanso inteligente con <strong>notificaciones push</strong> incluso con el móvil bloqueado, 
+              <strong>escáner de código de barras</strong> para alimentos, mapa de calor muscular interactivo 
+              y búsqueda dual en OpenFoodFacts + FatSecret.
             </p>
             <div class="project-card__features">
-              <span class="feature-tag">📊 Gráficas de progreso</span>
+              <span class="feature-tag">🤖 Asistente Gemini AI</span>
+              <span class="feature-tag">🔔 Push Notifications</span>
+              <span class="feature-tag">📷 Escáner de barras</span>
+              <span class="feature-tag">🏋️ Mapa muscular</span>
               <span class="feature-tag">🍎 Tracking nutricional</span>
-              <span class="feature-tag">⏱️ Temporizador de descanso</span>
-              <span class="feature-tag">☁️ Sync en la nube</span>
+              <span class="feature-tag">📊 Gráficas de progreso</span>
             </div>
             <div class="project-card__stack">
-              <span class="stack-badge stack-badge--java">Java</span>
-              <span class="stack-badge stack-badge--spring">Spring Boot</span>
-              <span class="stack-badge stack-badge--react">React</span>
+              <span class="stack-badge stack-badge--java">Java 17</span>
+              <span class="stack-badge stack-badge--spring">Spring Boot 3.3</span>
+              <span class="stack-badge stack-badge--react">React 19</span>
               <span class="stack-badge stack-badge--ts">TypeScript</span>
+              <span class="stack-badge stack-badge--tailwind">Tailwind CSS v4</span>
+              <span class="stack-badge stack-badge--tanstack">TanStack Query</span>
               <span class="stack-badge stack-badge--pg">PostgreSQL</span>
+              <span class="stack-badge stack-badge--gemini">Gemini AI</span>
+              <span class="stack-badge stack-badge--pwa">PWA</span>
               <span class="stack-badge stack-badge--docker">Docker</span>
-              <span class="stack-badge stack-badge--vite">Vite</span>
             </div>
             <div class="project-card__actions">
               <a href="https://github.com/RaclosDev/ascension-tracker" target="_blank" rel="noopener" class="project-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 Código fuente
               </a>
-              <a href="https://ascension.fly.dev" target="_blank" rel="noopener" class="project-link project-link--live">
+              <a href="https://ascension.raclos.es" target="_blank" rel="noopener" class="project-link project-link--live">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                 Demo en vivo
               </a>
@@ -187,66 +199,79 @@
               </div>
             </div>
             <p class="project-card__description">
-              Plataforma web para gestionar porras y predicciones del Mundial 2026 entre amigos. 
-              Los usuarios realizan sus pronósticos de los partidos, el sistema calcula puntuaciones 
-              automáticamente y muestra una clasificación en tiempo real con rankings dinámicos.
+              Plataforma fullstack para gestionar porras y predicciones del Mundial 2026 entre amigos. 
+              Sincronización automática de resultados con <strong>football-data.org</strong>, 
+              clasificación en tiempo real vía <strong>WebSockets</strong>, motor de desempate FIFA 
+              y calculador de clasificación matemática. Frontend React 19 con PWA.
             </p>
             <div class="project-card__features">
               <span class="feature-tag">🏆 Rankings en vivo</span>
-              <span class="feature-tag">📱 Responsive UI</span>
-              <span class="feature-tag">⚡ Cloudflare Proxy</span>
+              <span class="feature-tag">⚡ WebSockets</span>
+              <span class="feature-tag">⚽ Sync automática</span>
+              <span class="feature-tag">📊 Motor FIFA</span>
             </div>
             <div class="project-card__stack">
-              <span class="stack-badge" style="background: rgba(227, 79, 38, 0.12); color: #e34f26;">HTML5</span>
-              <span class="stack-badge" style="background: rgba(21, 114, 182, 0.12); color: #1572b6;">CSS3</span>
-              <span class="stack-badge stack-badge--js">JavaScript</span>
-              <span class="stack-badge" style="background: rgba(255, 202, 40, 0.12); color: #ffca28;">Firebase</span>
-              <span class="stack-badge" style="background: rgba(243, 128, 32, 0.12); color: #f38020;">Cloudflare</span>
+              <span class="stack-badge stack-badge--java">Java 21</span>
+              <span class="stack-badge stack-badge--spring">Spring Boot 3.3</span>
+              <span class="stack-badge stack-badge--react">React 19</span>
+              <span class="stack-badge stack-badge--tanstack">TanStack Query</span>
+              <span class="stack-badge stack-badge--pg">PostgreSQL</span>
+              <span class="stack-badge" style="background: rgba(34, 197, 94, 0.12); color: #4ade80;">WebSockets</span>
+              <span class="stack-badge stack-badge--pwa">PWA</span>
             </div>
             <div class="project-card__actions">
-              <a href="https://github.com/RaclosDev/porra-mundial-2026" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Código fuente
+              <a href="https://porra.raclos.es" target="_blank" rel="noopener" class="project-link project-link--live">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo en vivo
               </a>
             </div>
           </div>
         </article>
 
-        <!-- FlashForge -->
+        <!-- LoopDeck (formerly FlashForge) -->
         <article class="project-card" data-reveal>
-          <div class="project-card__accent project-card__accent--purple"></div>
+          <div class="project-card__accent project-card__accent--cyan"></div>
           <div class="project-card__content">
             <div class="project-card__header">
               <div class="project-card__icon">
-                <img src="flashforge-logo.svg" alt="FlashForge Logo" />
+                <img src="loopdeck-logo.png" alt="LoopDeck Logo" />
               </div>
               <div>
-                <h3 class="project-card__title">FlashForge</h3>
-                <p class="project-card__tagline">Repetición Espaciada tipo Anki</p>
+                <h3 class="project-card__title">LoopDeck</h3>
+                <p class="project-card__tagline">Repetición Espaciada Inteligente</p>
               </div>
             </div>
             <p class="project-card__description">
-              App de aprendizaje basada en flashcards con algoritmo de repetición espaciada. 
-              Permite crear mazos de tarjetas, estudiar con intervalos optimizados para la memoria 
-              a largo plazo, y realizar seguimiento del progreso de estudio con estadísticas detalladas.
+              App de aprendizaje basada en flashcards con el algoritmo <strong>SM-2</strong> de repetición espaciada. 
+              Soporta tarjetas básicas, inversas y <strong>cloze deletions</strong>, sesiones de estudio inmersivas 
+              con flip 3D y atajos de teclado, analytics de retención y streaks de estudio. 
+              Construida sobre la arquitectura de la plataforma Ascension.
             </p>
             <div class="project-card__features">
-              <span class="feature-tag">🧠 Repetición espaciada</span>
-              <span class="feature-tag">📚 Mazos personalizados</span>
-              <span class="feature-tag">📈 Estadísticas</span>
+              <span class="feature-tag">🧠 Algoritmo SM-2</span>
+              <span class="feature-tag">🃏 3D Card Flips</span>
+              <span class="feature-tag">⌨️ Keyboard Shortcuts</span>
+              <span class="feature-tag">📈 Analytics & Streaks</span>
+              <span class="feature-tag">📱 PWA Instalable</span>
             </div>
             <div class="project-card__stack">
-              <span class="stack-badge stack-badge--java">Java</span>
-              <span class="stack-badge stack-badge--spring">Spring Boot</span>
-              <span class="stack-badge stack-badge--react">React</span>
-              <span class="stack-badge stack-badge--js">JavaScript</span>
-              <span class="stack-badge stack-badge--vite">Vite</span>
-              <span class="stack-badge stack-badge--jwt">JWT</span>
+              <span class="stack-badge stack-badge--java">Java 21</span>
+              <span class="stack-badge stack-badge--spring">Spring Boot 3.3</span>
+              <span class="stack-badge stack-badge--react">React 19</span>
+              <span class="stack-badge stack-badge--ts">TypeScript</span>
+              <span class="stack-badge stack-badge--tailwind">Tailwind CSS</span>
+              <span class="stack-badge stack-badge--pg">PostgreSQL</span>
+              <span class="stack-badge" style="background: rgba(244, 63, 94, 0.12); color: #fb7185;">Flyway</span>
+              <span class="stack-badge stack-badge--pwa">PWA</span>
             </div>
             <div class="project-card__actions">
-              <a href="https://github.com/RaclosDev/flashforge" target="_blank" rel="noopener" class="project-link">
+              <a href="https://github.com/RaclosDev/loopdeck" target="_blank" rel="noopener" class="project-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 Código fuente
+              </a>
+              <a href="https://loopdeck.raclos.es" target="_blank" rel="noopener" class="project-link project-link--live">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Demo en vivo
               </a>
             </div>
           </div>
@@ -265,13 +290,15 @@
       <div class="about__grid">
         <div class="about__text" data-reveal>
           <p>
-            Soy desarrollador backend con experiencia en <strong>Java</strong> y <strong>Spring Boot</strong>, 
-            con capacidad para cubrir el stack completo usando <strong>React</strong> en el frontend.
+            Soy desarrollador fullstack con experiencia en <strong>Java</strong> y <strong>Spring Boot</strong> 
+            en el backend, y <strong>React 19</strong> con <strong>Tailwind CSS</strong> en el frontend. 
+            Mis proyectos son PWAs en producción real.
           </p>
           <p>
             Me gusta llevar las ideas desde cero hasta producción: diseñar la arquitectura, 
-            implementar APIs REST seguras con JWT, montar bases de datos PostgreSQL, 
-            y desplegar con Docker. También tengo experiencia con microservicios y Kafka.
+            implementar APIs REST seguras con JWT y OAuth2, integrar <strong>Google Gemini AI</strong> 
+            para funcionalidades inteligentes, montar bases de datos PostgreSQL 
+            y desplegar con Docker.
           </p>
           <p>
             Fuera del código, me encontrarás en el gimnasio (de ahí nació Ascension 💪) 
@@ -284,32 +311,35 @@
             <div class="skill-group">
               <h4 class="skill-group__title">Backend</h4>
               <ul class="skill-group__list">
-                <li>Java 17+</li>
-                <li>Spring Boot / Spring Security</li>
+                <li>Java 17 / 21</li>
+                <li>Spring Boot 3.3 / Spring Security</li>
                 <li>REST APIs / JWT / OAuth2</li>
-                <li>Hibernate / JPA</li>
-                <li>Apache Kafka</li>
+                <li>Hibernate / JPA / Flyway</li>
+                <li>Google Gemini API</li>
+                <li>Web Push (VAPID)</li>
                 <li>Maven</li>
               </ul>
             </div>
             <div class="skill-group">
               <h4 class="skill-group__title">Frontend</h4>
               <ul class="skill-group__list">
-                <li>React / Vite</li>
-                <li>JavaScript / TypeScript</li>
-                <li>HTML5 / CSS3</li>
+                <li>React 19 / Vite</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS v4 / Radix UI</li>
+                <li>TanStack Query v5</li>
                 <li>Zustand</li>
-                <li>PWA</li>
+                <li>PWA / Workbox</li>
+                <li>Recharts</li>
               </ul>
             </div>
             <div class="skill-group">
-              <h4 class="skill-group__title">DevOps & DB</h4>
+              <h4 class="skill-group__title">DevOps &amp; DB</h4>
               <ul class="skill-group__list">
                 <li>Docker / Docker Compose</li>
-                <li>PostgreSQL</li>
+                <li>PostgreSQL 16</li>
                 <li>Git / GitHub</li>
-                <li>Fly.io / Render</li>
-                <li>CI/CD</li>
+                <li>Railway</li>
+                <li>GitHub Actions CI</li>
               </ul>
             </div>
           </div>
