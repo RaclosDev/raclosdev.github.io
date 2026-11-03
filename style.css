@@ -204,7 +204,7 @@ h1 span {
   margin-right: 14px;
   color: var(--teal);
 }
-.field-note > p:last-of-type {
+.field-note > p:not(.handwritten):last-of-type {
   font-size: 15px;
   margin-top: 20px;
 }
