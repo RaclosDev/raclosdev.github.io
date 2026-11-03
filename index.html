@@ -41,12 +41,12 @@
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-sheet paper">
           <p class="eyebrow">CARLOS SANZ / DESARROLLO DE SOFTWARE</p>
-          <h1 id="hero-title">
-            Backend por oficio.<br /><span>Productos por<br />curiosidad.</span>
-          </h1>
+          <h1 id="hero-title">Hola, soy <span>Carlos</span></h1>
+          <p class="hero-role">Backend Developer · Java / Spring Boot</p>
           <p class="intro">
-            Soy Carlos. Trabajo con <strong>Java y Spring Boot</strong> y
-            construyo aplicaciones que van de la API al navegador.
+            Ingeniero de software especializado en backend. Desarrollo proyectos
+            personales con Java, Spring Boot y React, desde la API hasta el
+            despliegue.
           </p>
           <div class="actions">
             <a class="button" href="#projects"
@@ -60,18 +60,23 @@
             >
           </div>
         </div>
-        <aside class="field-note paper" aria-label="Mi trabajo">
-          <span class="eyebrow">DEL CÓDIGO AL PRODUCTO</span>
-          <p class="handwritten">Tres ideas.<br />Tres aplicaciones.</p>
-          <ul>
-            <li><span>01</span> Una porra con amigos.</li>
-            <li><span>02</span> Un registro del gimnasio.</li>
-            <li><span>03</span> Una forma de repasar.</li>
-          </ul>
-          <p>Diseño la API, desarrollo la interfaz y mantengo el despliegue.</p>
-          <a class="text-link" href="#projects">Echa un vistazo ↓</a>
+        <aside class="field-note paper" aria-label="Stack principal">
+          <p class="eyebrow">RACLOSDEV.JAVA</p>
+          <pre><code>public class RaclosDev {
+  String role = "Backend Developer";
+  String[] stack = {
+    "Java", "Spring Boot",
+    "React", "TypeScript",
+    "PostgreSQL", "Docker"
+  };
+}</code></pre>
         </aside>
       </section>
+      <div class="tech-strip" aria-label="Tecnologías">
+        Java <span>·</span> Spring Boot <span>·</span> React
+        <span>·</span> TypeScript <span>·</span> PostgreSQL
+        <span>·</span> Docker <span>·</span> PWA
+      </div>
       <section
         class="projects section"
         id="projects"
@@ -79,81 +84,24 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow light">01 / PROYECTOS PERSONALES</p>
-            <h2 id="projects-title">Ideas puestas en marcha.</h2>
+            <p class="eyebrow light">PROYECTOS</p>
+            <h2 id="projects-title">Lo que he construido</h2>
           </div>
-          <p>
-            Aplicaciones que desarrollo y mantengo.<br />Puedes probarlas y
-            consultar su código.
-          </p>
+          <p>Proyectos personales fullstack</p>
         </div>
-        <article class="project paper" aria-labelledby="project-01">
-          <div class="project-copy">
-            <span class="eyebrow">PROYECTO 01</span>
-            <div class="project-heading">
-              <img
-                src="assets/porrapp-icon.png"
-                alt=""
-                width="56"
-                height="56"
-              />
-              <div>
-                <h3 id="project-01">PorrApp</h3>
-                <p class="handwritten">Fútbol entre amigos</p>
-              </div>
-            </div>
-            <p>
-              Ligas privadas para el Mundial y competiciones por jornadas. Cada
-              liga elige su formato y puntuación; los resultados de ESPN
-              actualizan los puntos y la clasificación en directo.
-            </p>
-            <ul class="features">
-              <li>Cuadros y predicciones 1X2</li>
-              <li>Reglas por liga</li>
-              <li>Resultados por WebSocket</li>
-            </ul>
-            <p class="stack">
-              Java 21 · Spring Boot 4.1 · React · TypeScript · PostgreSQL
-            </p>
-            <div class="actions">
-              <a
-                class="button"
-                href="https://porra.raclos.es/demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Probar la demo <span aria-hidden="true">↗</span></a
-              ><a
-                class="text-link"
-                href="https://github.com/RaclosDev/porrApp"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ver código <span aria-hidden="true">↗</span></a
-              >
-            </div>
-          </div>
-          <figure class="project-preview bracket">
-            <img
-              src="assets/porrapp.jpg"
-              alt="Cuadro del Mundial en PorrApp, con cruces y resultados"
-              loading="lazy"
-            />
-            <figcaption>Demo pública · solo lectura</figcaption>
-          </figure>
-        </article>
         <article class="project paper" aria-labelledby="project-02">
           <div class="project-copy">
-            <span class="eyebrow">PROYECTO 02</span>
             <div class="project-heading">
               <img src="ascension-logo.png" alt="" width="56" height="56" />
               <div>
                 <h3 id="project-02">Ascension</h3>
-                <p class="handwritten">Entrenar, registrar, progresar</p>
+                <p class="handwritten">Entrenamiento y nutrición</p>
               </div>
             </div>
             <p>
-              Registro de entrenamientos, diario de alimentación y evolución de
-              peso y pasos. Plantillas, recetas y copias de seguridad, con
-              asistencia nutricional de Gemini y avisos de descanso opcionales.
+              PWA de entrenamiento y nutrición: rutinas, registro de series,
+              diario de comidas y seguimiento del progreso. Asistencia
+              nutricional con Gemini.
             </p>
             <ul class="features">
               <li>Entrenamientos y rutinas</li>
@@ -190,7 +138,6 @@
         </article>
         <article class="project paper" aria-labelledby="project-03">
           <div class="project-copy">
-            <span class="eyebrow">PROYECTO 03</span>
             <div class="project-heading">
               <img
                 src="assets/loopdeck-icon.png"
@@ -200,13 +147,12 @@
               />
               <div>
                 <h3 id="project-03">LoopDeck</h3>
-                <p class="handwritten">Preparar, estudiar, recordar</p>
+                <p class="handwritten">Flashcards y repetición espaciada</p>
               </div>
             </div>
             <p>
-              Mazos de tarjetas, apuntes DOCX y varias formas de estudiar en una
-              misma aplicación. El repaso con FSRS-5 adapta la próxima fecha a
-              tu historial; Gemini ayuda a generar tarjetas y resolver dudas.
+              Plataforma de flashcards con repetición espaciada FSRS-5, apuntes
+              DOCX, tests y tutor IA. Generación de tarjetas con Gemini.
             </p>
             <ul class="features">
               <li>Repaso espaciado FSRS-5</li>
@@ -241,33 +187,80 @@
             <figcaption>Interfaz real · datos de demostración</figcaption>
           </figure>
         </article>
+        <article class="project paper" aria-labelledby="project-01">
+          <div class="project-copy">
+            <div class="project-heading">
+              <img
+                src="assets/porrapp-icon.png"
+                alt=""
+                width="56"
+                height="56"
+              />
+              <div>
+                <h3 id="project-01">PorrApp</h3>
+                <p class="handwritten">Fútbol entre amigos</p>
+              </div>
+            </div>
+            <p>
+              Porras de fútbol con ligas privadas, cuadros del Mundial y
+              predicciones por jornadas. Resultados automáticos de ESPN y
+              clasificación en directo.
+            </p>
+            <ul class="features">
+              <li>Cuadros y predicciones 1X2</li>
+              <li>Reglas por liga</li>
+              <li>Resultados por WebSocket</li>
+            </ul>
+            <p class="stack">
+              Java 21 · Spring Boot 4.1 · React · TypeScript · PostgreSQL
+            </p>
+            <div class="actions">
+              <a
+                class="button"
+                href="https://porra.raclos.es/demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Probar la demo <span aria-hidden="true">↗</span></a
+              ><a
+                class="text-link"
+                href="https://github.com/RaclosDev/porrApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Ver código <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+          <figure class="project-preview bracket">
+            <img
+              src="assets/porrapp.jpg"
+              alt="Cuadro del Mundial en PorrApp, con cruces y resultados"
+              loading="lazy"
+            />
+            <figcaption>Demo pública · solo lectura</figcaption>
+          </figure>
+        </article>
       </section>
       <section class="section about" id="about" aria-labelledby="about-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow light">02 / SOBRE MÍ</p>
-            <h2 id="about-title">También detrás de la API.</h2>
+            <p class="eyebrow light">SOBRE MÍ</p>
+            <h2 id="about-title">Sobre mí</h2>
           </div>
         </div>
         <div class="about-grid">
           <div class="paper about-copy">
-            <h3>Hola, soy Carlos.</h3>
             <p>
               Soy ingeniero de software con perfil backend. Mi trabajo se centra
               en Java, Spring Boot y sistemas transaccionales.
             </p>
             <p>
-              En mis proyectos personales me ocupo del recorrido completo:
-              modelo de datos, API, interfaz y despliegue. Me interesa que el
-              producto sea útil y que su código se pueda mantener.
-            </p>
-            <p>
-              El gimnasio, el fútbol y el estudio han acabado dando forma a las
-              aplicaciones de esta página.
+              En mis proyectos personales desarrollo APIs, interfaces React y
+              despliegues con Docker. Trabajo con pruebas automatizadas y GitHub
+              Actions.
             </p>
           </div>
           <div class="paper toolbox">
-            <p class="eyebrow">MI CAJA DE HERRAMIENTAS</p>
+            <p class="eyebrow">STACK TECNOLÓGICO</p>
             <dl>
               <div>
                 <dt>Backend</dt>
@@ -299,7 +292,7 @@
         aria-labelledby="contact-title"
       >
         <div class="paper contact-sheet">
-          <p class="eyebrow">03 / CONTACTO</p>
+          <p class="eyebrow">CONTACTO</p>
           <h2 id="contact-title">¿Hablamos?</h2>
           <p>Para hablar de un proyecto o una oportunidad profesional.</p>
           <a class="email" href="mailto:raclosdev@gmail.com"

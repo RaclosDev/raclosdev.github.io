@@ -535,3 +535,91 @@ footer > a:last-child {
     scroll-behavior: auto;
   }
 }
+
+/* Compact portfolio structure: introduction, technologies and project cards. */
+.hero {
+  padding-block: 55px 45px;
+  gap: 32px;
+}
+h1 {
+  font-size: clamp(38px, 4.5vw, 60px);
+  letter-spacing: -1px;
+}
+.hero-sheet {
+  padding: 36px;
+}
+.hero-role {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.intro {
+  font-size: 17px;
+}
+.field-note {
+  padding: 25px;
+  transform: rotate(1deg);
+}
+.field-note pre {
+  font: 12px/1.9 monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  padding: 18px 0;
+  border-block: 1px solid #45505d;
+  margin-bottom: 55px;
+  font-size: 14px;
+}
+.tech-strip span {
+  color: #e7cb70;
+}
+.project-copy {
+  padding: 28px 32px;
+}
+.project-preview {
+  padding: 22px;
+}
+.project-preview.mobile img {
+  height: 300px;
+}
+.project-preview img {
+  max-height: 300px;
+}
+.project {
+  margin-bottom: 26px;
+  transform: none;
+}
+.section {
+  padding-bottom: 55px;
+}
+.contact-sheet {
+  padding: 32px;
+}
+.contact .email {
+  font-size: clamp(20px, 3vw, 30px);
+}
+@media (max-width: 480px) {
+  .hero-sheet {
+    padding: 26px 22px;
+  }
+  .hero {
+    gap: 30px;
+  }
+  .project-copy {
+    padding: 25px 22px;
+  }
+  .field-note {
+    width: 100%;
+  }
+  .tech-strip {
+    gap: 7px 12px;
+    font-size: 12px;
+  }
+}
