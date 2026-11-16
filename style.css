@@ -777,6 +777,9 @@ body.gallery-open {
   }
 }
 @media (max-width: 800px) {
+  .site-header .nav-cv {
+    display: none;
+  }
   html {
     scroll-padding-top: 24px;
   }
