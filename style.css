@@ -149,6 +149,17 @@ button:focus-visible {
 h2 span {
   color: var(--petrol);
 }
+.hero-focus {
+  margin-top: 22px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  line-height: 1.6;
+}
+.hero-focus span {
+  white-space: nowrap;
+}
 .intro {
   max-width: 490px;
   color: #42525b;
@@ -709,12 +720,37 @@ body.gallery-open {
     padding-block: 32px 40px;
   }
   .hero h1 {
-    font-size: clamp(60px, min(6.3vw, 10.5svh), 90px);
+    font-size: clamp(54px, min(6.3vw, 9.2svh), 90px);
+  }
+  .intro {
+    max-width: 540px;
+    line-height: 1.7;
+    margin-top: 18px;
   }
   .hero-devices {
     aspect-ratio: 1 / 0.95;
     width: min(100%, max(400px, calc((100svh - 330px) / 0.95)));
     margin-inline: auto;
+  }
+}
+@media (min-width: 1101px) and (max-height: 820px) {
+  /* Portátiles con poca altura: el hero se compacta para que los botones sigan a la vista. */
+  .hero {
+    padding-block: 20px 28px;
+  }
+  .hero .eyebrow {
+    margin-bottom: 14px;
+  }
+  .hero-focus {
+    margin-top: 16px;
+  }
+  .intro {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+  .hero-actions {
+    margin-top: 22px;
   }
 }
 @media (min-width: 1500px) {
