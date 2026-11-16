@@ -1,8 +1,8 @@
 const previews = {
   ascension: ["Ascension", "Entrenamiento y seguimiento"],
   loopdeck: ["LoopDeck", "Estudio y repetición espaciada"],
-  porrapp: ["PorrApp", "Ligas, predicciones y partidas"],
-  portfolio: ["Portfolio Tracker", "Vigilancia y registro de cartera"],
+  porrapp: ["PorrApp", "Ligas, predicciones y Mundial"],
+  portfolio: ["Portfolio Tracker", "Vigilancia y análisis de cartera"],
 };
 
 const previewLinks = [...document.querySelectorAll("[data-preview]")];
@@ -50,6 +50,7 @@ function showScreen(index) {
   // Mismas proporciones que la miniatura: reserva el hueco antes de cargar.
   galleryImage.setAttribute("width", thumb.getAttribute("width"));
   galleryImage.setAttribute("height", thumb.getAttribute("height"));
+  galleryImage.classList.toggle("is-wide", thumb.width > thumb.height);
   galleryImage.src = screen.href;
   galleryImage.alt = thumb.alt;
   document.querySelector("#gallery-title").textContent = screen.dataset.caption;
