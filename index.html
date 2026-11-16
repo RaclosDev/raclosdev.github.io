@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Carlos Sanz Tomero · Backend & producto</title>
+    <title>Carlos Sanz Tomero · Backend &amp; producto</title>
     <meta
       name="description"
       content="Ingeniero de software con foco en Java y Spring Boot. Explora Ascension, LoopDeck, PorrApp y Portfolio Tracker: producto, interfaz real y decisiones técnicas."
     />
     <meta name="author" content="Carlos Sanz Tomero" />
     <meta name="theme-color" content="#f2ecd9" />
+    <meta name="color-scheme" content="light" />
     <link rel="canonical" href="https://raclosdev.github.io/" />
     <meta
       property="og:title"
@@ -20,18 +21,23 @@
       content="Cuatro proyectos, sus interfaces y el código que los hace funcionar. Java, Spring Boot, React y TypeScript."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Carlos Sanz Tomero" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:url" content="https://raclosdev.github.io/" />
     <meta
       property="og:image"
       content="https://raclosdev.github.io/assets/social.jpg"
     />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2560" />
+    <meta property="og:image:height" content="1280" />
     <meta
       property="og:image:alt"
       content="Carlos Sanz Tomero: construyo software, resuelvo problemas."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,6 +48,30 @@
     <script>
       if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
         document.documentElement.classList.add("motion");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carlos Sanz Tomero",
+        "alternateName": "RaclosDev",
+        "url": "https://raclosdev.github.io/",
+        "image": "https://raclosdev.github.io/assets/social.jpg",
+        "jobTitle": "Software Engineer",
+        "description": "Ingeniero de software especializado en backend con Java y Spring Boot.",
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "System design",
+          "React",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "sameAs": [
+          "https://github.com/RaclosDev",
+          "https://www.linkedin.com/in/carlos-sanz-tomero/"
+        ]
+      }
     </script>
     <script src="site.js" defer></script>
     <script src="motion.js" defer></script>
@@ -68,13 +98,13 @@
         aria-labelledby="hero-title"
       >
         <div class="hero-copy">
-          <p class="eyebrow">CARLOS SANZ TOMERO / SOFTWARE ENGINEER</p>
+          <p class="eyebrow">CARLOS SANZ TOMERO / <span lang="en">SOFTWARE ENGINEER</span></p>
           <h1 id="hero-title">
             DISEÑO<br />SISTEMAS.<br /><span>CONSTRUYO<br />PRODUCTOS.</span>
           </h1>
-          <p class="hero-focus">
-            <span>BACKEND ENGINEERING</span> · <span>JAVA</span> · <span>SPRING BOOT</span> ·
-            <span>SYSTEM DESIGN</span>
+          <p class="hero-focus" lang="en">
+            <span>BACKEND ENGINEERING</span> · <span>JAVA</span> ·
+            <span>SPRING BOOT</span> · <span>SYSTEM DESIGN</span>
           </p>
           <p class="intro">
             Soy Carlos, ingeniero de software especializado en backend. Trabajo
@@ -85,7 +115,7 @@
           <div class="hero-actions">
             <a class="button" href="#proyectos"
               >Explorar proyectos <span aria-hidden="true">↓</span></a
-            ><a class="text-link" href="https://github.com/RaclosDev"
+            ><a class="text-link" href="https://github.com/RaclosDev" target="_blank" rel="noopener noreferrer"
               >Mi GitHub <span aria-hidden="true">↗</span></a
             ><a class="text-link" href="assets/CV_Carlos_Sanz_Tomero.pdf" download="CV_Carlos_Sanz_Tomero.pdf"
               >Descargar CV <span aria-hidden="true">↓</span></a
@@ -188,11 +218,11 @@
         <article
           class="project project-ascension"
           id="ascension"
-          aria-labelledby="title-ascension"
+          aria-labelledby="name-ascension title-ascension"
           data-project="ascension"
         >
           <div class="project-heading">
-            <p><span class="project-number">01</span> Ascension</p>
+            <p><span class="project-number" aria-hidden="true">01</span> <span id="name-ascension">Ascension</span></p>
             <span class="category">ENTRENAMIENTO / NUTRICIÓN / COACH</span>
           </div>
           <div class="project-layout">
@@ -236,11 +266,11 @@
                   >Abrir Ascension <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/ascension-tracker"
+                  href="https://github.com/RaclosDev/ascension-tracker" target="_blank" rel="noopener noreferrer"
                   >Ver código <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/ascension-tracker/blob/main/docs/architecture.md"
+                  href="https://github.com/RaclosDev/ascension-tracker/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer"
                   >Arquitectura <span aria-hidden="true">↗</span></a
                 >
               </div>
@@ -303,11 +333,11 @@
         <article
           class="project project-loopdeck"
           id="loopdeck"
-          aria-labelledby="title-loopdeck"
+          aria-labelledby="name-loopdeck title-loopdeck"
           data-project="loopdeck"
         >
           <div class="project-heading">
-            <p><span class="project-number">02</span> LoopDeck</p>
+            <p><span class="project-number" aria-hidden="true">02</span> <span id="name-loopdeck">LoopDeck</span></p>
             <span class="category">FLASHCARDS / APUNTES / REPASO</span>
           </div>
           <div class="project-layout">
@@ -349,11 +379,11 @@
                   >Abrir LoopDeck <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/loopdeck"
+                  href="https://github.com/RaclosDev/loopdeck" target="_blank" rel="noopener noreferrer"
                   >Ver código <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/loopdeck/blob/main/docs/ARCHITECTURE.md"
+                  href="https://github.com/RaclosDev/loopdeck/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer"
                   >Arquitectura <span aria-hidden="true">↗</span></a
                 >
               </div>
@@ -416,11 +446,11 @@
         <article
           class="project project-porrapp"
           id="porrapp"
-          aria-labelledby="title-porrapp"
+          aria-labelledby="name-porrapp title-porrapp"
           data-project="porrapp"
         >
           <div class="project-heading">
-            <p><span class="project-number">03</span> PorrApp</p>
+            <p><span class="project-number" aria-hidden="true">03</span> <span id="name-porrapp">PorrApp</span></p>
             <span class="category">PREDICCIONES / LIGAS / PARTIDAS</span>
           </div>
           <div class="project-layout">
@@ -461,11 +491,11 @@
                   >Probar demo sin registro <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/porrApp"
+                  href="https://github.com/RaclosDev/porrApp" target="_blank" rel="noopener noreferrer"
                   >Ver código <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/porrApp/blob/main/docs/architecture.md"
+                  href="https://github.com/RaclosDev/porrApp/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer"
                   >Arquitectura <span aria-hidden="true">↗</span></a
                 >
               </div>
@@ -528,11 +558,11 @@
         <article
           class="project project-portfolio"
           id="portfolio"
-          aria-labelledby="title-portfolio"
+          aria-labelledby="name-portfolio title-portfolio"
           data-project="portfolio"
         >
           <div class="project-heading">
-            <p><span class="project-number">04</span> Portfolio Tracker</p>
+            <p><span class="project-number" aria-hidden="true">04</span> <span id="name-portfolio">Portfolio Tracker</span></p>
             <span class="category">WATCHLIST / CARTERA / OPERACIONES</span>
           </div>
           <div class="project-layout">
@@ -573,11 +603,11 @@
                 </p>
                 <a
                   class="text-link"
-                  href="https://github.com/RaclosDev/portfolio-tracker"
+                  href="https://github.com/RaclosDev/portfolio-tracker" target="_blank" rel="noopener noreferrer"
                   >Ver código <span aria-hidden="true">↗</span></a
                 ><a
                   class="text-link"
-                  href="https://github.com/RaclosDev/portfolio-tracker/blob/main/docs/ARQUITECTURA.md"
+                  href="https://github.com/RaclosDev/portfolio-tracker/blob/main/docs/ARQUITECTURA.md" target="_blank" rel="noopener noreferrer"
                   >Arquitectura <span aria-hidden="true">↗</span></a
                 >
               </div>
@@ -673,7 +703,7 @@
           </p>
           <a
             class="text-link"
-            href="https://www.linkedin.com/in/carlos-sanz-tomero/"
+            href="https://www.linkedin.com/in/carlos-sanz-tomero/" target="_blank" rel="noopener noreferrer"
             >Trayectoria profesional en LinkedIn
             <span aria-hidden="true">↗</span></a
           >
@@ -724,10 +754,15 @@
               >raclosdev@gmail.com <span aria-hidden="true">↗</span></a
             >
             <div class="contact-links">
-              <a href="https://www.linkedin.com/in/carlos-sanz-tomero/"
-                >LinkedIn ↗</a
-              ><a href="https://github.com/RaclosDev">GitHub ↗</a
-              ><a href="assets/CV_Carlos_Sanz_Tomero.pdf" download="CV_Carlos_Sanz_Tomero.pdf">CV en PDF ↓</a>
+              <a href="https://www.linkedin.com/in/carlos-sanz-tomero/" target="_blank" rel="noopener noreferrer"
+                >LinkedIn <span aria-hidden="true">↗</span></a
+              ><a href="https://github.com/RaclosDev" target="_blank" rel="noopener noreferrer"
+                >GitHub <span aria-hidden="true">↗</span></a
+              ><a
+                href="assets/CV_Carlos_Sanz_Tomero.pdf"
+                download="CV_Carlos_Sanz_Tomero.pdf"
+                >CV en PDF <span aria-hidden="true">↓</span></a
+              >
             </div>
           </div>
         </div>
@@ -738,8 +773,8 @@
         >CS<span>.</span></a
       >
       <p>Carlos Sanz Tomero · RaclosDev</p>
-      <a href="https://github.com/RaclosDev/raclosdev.github.io"
-        >Código de este portfolio ↗</a
+      <a href="https://github.com/RaclosDev/raclosdev.github.io" target="_blank" rel="noopener noreferrer"
+        >Código de este portfolio <span aria-hidden="true">↗</span></a
       >
     </footer>
     <dialog class="gallery" aria-labelledby="gallery-title">
