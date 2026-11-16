@@ -13,6 +13,7 @@ python -m http.server 5185 --bind 127.0.0.1
 - `index.html`: contenido, enlaces y metadatos; los proyectos se pueden consultar sin JavaScript.
 - `style.css`: diseño responsive, composición de móviles y preferencia de movimiento reducido.
 - `site.js`: selector de vista previa y galería con navegación por teclado, Escape y restitución del foco.
+- `motion.js`: capa de movimiento sin dependencias (aparición al hacer scroll, títulos por líneas, banda en bucle, parallax de los móviles, inclinación 3D, foco de luz y botones magnéticos). Solo se activa con JavaScript y sin `prefers-reduced-motion`; sin ella la página queda completa y estática.
 - `assets/screens`: capturas en WebP de las interfaces reales. Los datos son de demostración; Portfolio Tracker no ofrece acceso público a su cuenta.
 
 ## Actualizar las capturas
