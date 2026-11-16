@@ -19,6 +19,8 @@ previewLinks.forEach((link, index) => {
     heroStage.replaceChildren(
       ...[...project.querySelectorAll(".screen-link")].map((screen) => {
         const clone = screen.cloneNode(true);
+        // El original puede llevar el desplazamiento del parallax en línea.
+        clone.removeAttribute("style");
         clone.querySelector("img").loading = "eager";
         return clone;
       }),
@@ -44,8 +46,12 @@ let galleryOpener;
 function showScreen(index) {
   currentIndex = (index + currentScreens.length) % currentScreens.length;
   const screen = currentScreens[currentIndex];
+  const thumb = screen.querySelector("img");
+  // Mismas proporciones que la miniatura: reserva el hueco antes de cargar.
+  galleryImage.setAttribute("width", thumb.getAttribute("width"));
+  galleryImage.setAttribute("height", thumb.getAttribute("height"));
   galleryImage.src = screen.href;
-  galleryImage.alt = screen.querySelector("img").alt;
+  galleryImage.alt = thumb.alt;
   document.querySelector("#gallery-title").textContent = screen.dataset.caption;
   document.querySelector("#gallery-project").textContent =
     previews[screen.dataset.gallery][0];
@@ -107,3 +113,59 @@ gallery.addEventListener("close", () => {
   document.body.classList.remove("gallery-open");
   galleryOpener?.focus({ preventScroll: true });
 });
+
+// Deslizar con el dedo cambia de pantalla en la galería.
+let swipeStart;
+gallery.addEventListener(
+  "touchstart",
+  (event) => {
+    swipeStart = event.touches.length === 1 ? event.touches[0] : undefined;
+  },
+  { passive: true },
+);
+gallery.addEventListener(
+  "touchend",
+  (event) => {
+    if (!swipeStart) return;
+    const end = event.changedTouches[0];
+    const dx = end.clientX - swipeStart.clientX;
+    const dy = end.clientY - swipeStart.clientY;
+    swipeStart = undefined;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5)
+      showScreen(currentIndex + (dx < 0 ? 1 : -1));
+  },
+  { passive: true },
+);
+
+// Marca en la cabecera fija la sección que se está leyendo.
+const sectionLinks = [
+  ...document.querySelectorAll('.site-header nav a[href^="#"]'),
+]
+  .map((link) => [link, document.querySelector(link.getAttribute("href"))])
+  .filter(([, section]) => section);
+let spyQueued = false;
+
+function updateCurrentSection() {
+  spyQueued = false;
+  const atBottom =
+    innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+  const line = innerHeight * 0.4;
+  let current = atBottom ? sectionLinks.at(-1)?.[1] : undefined;
+  if (!current)
+    sectionLinks.forEach(([, section]) => {
+      if (section.getBoundingClientRect().top <= line) current = section;
+    });
+  sectionLinks.forEach(([link, section]) => {
+    if (section === current) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+function queueSpy() {
+  if (spyQueued) return;
+  spyQueued = true;
+  requestAnimationFrame(updateCurrentSection);
+}
+addEventListener("scroll", queueSpy, { passive: true });
+addEventListener("resize", queueSpy, { passive: true });
+updateCurrentSection();
