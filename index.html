@@ -48,6 +48,7 @@
       .stage { position: relative; display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.4vh, 12px); min-width: 0; min-height: 0; }
       .fr { flex: 1; align-self: stretch; min-height: 0; container-type: size; display: grid; place-items: center; }
       /* Conmutador Móvil / Web: neutro, igual en todos los diseños. */
+      .vws { flex: none; display: flex; gap: 8px; }
       .vw { flex: none; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #0b0c0fd9; box-shadow: 0 0 0 1px #ffffff2e; font: 600 12px/1 system-ui, sans-serif; }
       .vw button { all: unset; cursor: pointer; padding: .6em 1.1em; border-radius: 999px; color: #ffffffa6; transition: background .25s, color .25s; }
       .vw button:hover { color: #fff; }
@@ -64,11 +65,17 @@
       .lap .scr iframe { width: 1440px; height: 900px; }
       .dm.live iframe { opacity: 1; }
       .op { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; padding: .6em 1em; border-radius: 999px; background: #fffffff0; color: #111; font: 600 12px/1 system-ui, sans-serif; text-decoration: none; box-shadow: 0 6px 20px #0006; }
-      .dm.live .op { display: none; }
+      .dm:has(.ld):not(.off) .op { display: none; }
       .ld { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font-size: 13px; color: #9aa0aa; }
       .dm.live .ld { display: none; }
-      .dm.off .ld { font-size: 0; }
-      .dm.off .ld::after { content: "Demo no disponible ahora"; font-size: 13px; }
+      .ld { grid-auto-flow: row; align-content: center; gap: 12px; }
+      .ld i { justify-self: center; width: 26px; height: 26px; border-radius: 50%; border: 2.5px solid #ffffff26; border-top-color: #fbbf24; animation: spin .8s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      /* Si la demo no responde: un aviso cercano y el botón grande para abrirla aparte. */
+      .dm.off .ld { font-size: 0; align-content: start; padding-top: 34%; }
+      .dm.off .ld i { display: none; }
+      .dm.off .ld::after { content: "La demo no ha cargado aquí, pero puedes abrirla aparte"; font-size: 14px; color: #d6d9df; max-width: 24ch; text-align: center; line-height: 1.4; }
+      .dm.off .op { bottom: auto; top: 50%; transform: translate(-50%, -10%); padding: .9em 1.4em; font-size: 14px; background: #fbbf24; color: #14161b; z-index: 3; }
       /* Aviso de demo usable: un toque (clic en la web) que se pasea y una etiqueta; se va cuando entra el ratón. */
       .touch { position: absolute; z-index: 2; top: 60%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #ffffff8c; box-shadow: 0 0 0 1.5px #1018278c, 0 8px 20px #031a2166; opacity: 0; pointer-events: none; --hx: 46px; --hy: 70px; }
       .touch::after { content: ""; position: absolute; inset: -1px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #10182766; opacity: 0; }
