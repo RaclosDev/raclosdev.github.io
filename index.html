@@ -9,10 +9,10 @@
       content="Ingeniero de software con foco en Java y Spring Boot. Prueba aquí mismo las demos de Ascension, LoopDeck, PorrApp y Portfolio Tracker: producto, stack y decisiones técnicas."
     />
     <meta name="author" content="Carlos Sanz Tomero" />
-    <meta name="theme-color" content="#f2ecd9" />
-    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#14161b" />
+    <meta name="color-scheme" content="dark" />
     <link rel="canonical" href="https://raclosdev.github.io/" />
-    <meta property="og:title" content="Carlos Sanz · Diseño sistemas. Construyo productos." />
+    <meta property="og:title" content="Carlos Sanz Tomero · Ingeniero de software, backend con Java y Spring Boot" />
     <meta
       property="og:description"
       content="Cuatro proyectos que puedes probar sin registro. Java, Spring Boot, React y TypeScript."
@@ -25,265 +25,80 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2560" />
     <meta property="og:image:height" content="1280" />
-    <meta property="og:image:alt" content="Carlos Sanz Tomero: diseño sistemas, construyo productos." />
+    <meta property="og:image:alt" content="Carlos Sanz Tomero, ingeniero de software: cuatro proyectos para probar sin registro." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="showcase.css" />
-    <script>
-      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
-        document.documentElement.classList.add("motion");
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Carlos Sanz Tomero",
-        "alternateName": "RaclosDev",
-        "url": "https://raclosdev.github.io/",
-        "image": "https://raclosdev.github.io/assets/social.jpg",
-        "jobTitle": "Software Engineer",
-        "description": "Ingeniero de software especializado en backend con Java y Spring Boot.",
-        "knowsAbout": ["Java", "Spring Boot", "System design", "React", "TypeScript", "PostgreSQL"],
-        "sameAs": ["https://github.com/RaclosDev", "https://www.linkedin.com/in/carlos-sanz-tomero/"]
-      }
-    </script>
-    <script src="showcase.js" defer></script>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; height: 100%; overflow: hidden; }
+      body { -webkit-font-smoothing: antialiased; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      button { font: inherit; color: inherit; cursor: pointer; }
+      h1, h2, h3, h4, p, ul, ol, figure, pre { margin: 0; padding: 0; }
+      ul, ol { list-style: none; }
+      /* Pila de proyectos: todos en la misma celda, solo se ve el activo. */
+      .deck { display: grid; min-width: 0; min-height: 0; }
+      .deck > [data-sl] { grid-area: 1 / 1; min-width: 0; min-height: 0; opacity: 0; visibility: hidden; transition: opacity .4s, transform .6s cubic-bezier(.2, .7, .2, 1), visibility 0s .6s; }
+      .deck > [data-sl].on { opacity: 1; visibility: visible; transition-delay: 0s; }
+      /* Dispositivo con la demo: se ajusta al hueco que le deje el diseño. */
+      .stage { position: relative; display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.4vh, 12px); min-width: 0; min-height: 0; }
+      .fr { flex: 1; align-self: stretch; min-height: 0; container-type: size; display: grid; place-items: center; }
+      /* Conmutador Móvil / Web: neutro, igual en todos los diseños. */
+      .vw { flex: none; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #0b0c0fd9; box-shadow: 0 0 0 1px #ffffff2e; font: 600 12px/1 system-ui, sans-serif; }
+      .vw button { all: unset; cursor: pointer; padding: .6em 1.1em; border-radius: 999px; color: #ffffffa6; transition: background .25s, color .25s; }
+      .vw button:hover { color: #fff; }
+      .vw button[aria-pressed="true"] { background: #fff; color: #111; }
+      .vw button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+      .dm { --bz: 8px; margin: 0; padding: var(--bz); border-radius: calc(24px + var(--bz)); background: #0b0c0f; box-shadow: 0 0 0 1px #ffffff24, 0 28px 60px -24px #000c; width: min(100cqw, calc((100cqh - 2 * var(--bz)) * 402 / 874 + 2 * var(--bz))); }
+      .dm { transition: width .5s cubic-bezier(.2, .7, .2, 1), border-radius .5s; }
+      .dm.lap { border-radius: 16px; width: min(100cqw, calc((100cqh - 2 * var(--bz)) * 1.6 + 2 * var(--bz))); }
+      .scr { position: relative; overflow: hidden; border-radius: 24px; aspect-ratio: 402 / 874; background: #000; transition: aspect-ratio .5s cubic-bezier(.2, .7, .2, 1); }
+      .alt .scr img { object-fit: contain; }
+      .lap .scr { aspect-ratio: 16 / 10; border-radius: 9px; }
+      .scr img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .scr iframe { position: absolute; left: 0; top: 0; width: 402px; height: 874px; border: 0; background: #fff; transform-origin: 0 0; transform: scale(var(--k, 1)); opacity: 0; transition: opacity .4s; }
+      .lap .scr iframe { width: 1440px; height: 900px; }
+      .dm.live iframe { opacity: 1; }
+      .op { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); white-space: nowrap; padding: .6em 1em; border-radius: 999px; background: #fffffff0; color: #111; font: 600 12px/1 system-ui, sans-serif; text-decoration: none; box-shadow: 0 6px 20px #0006; }
+      .dm.live .op { display: none; }
+      .ld { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font-size: 13px; color: #9aa0aa; }
+      .dm.live .ld { display: none; }
+      .dm.off .ld { font-size: 0; }
+      .dm.off .ld::after { content: "Demo no disponible ahora"; font-size: 13px; }
+      /* Aviso de demo usable: un toque (clic en la web) que se pasea y una etiqueta; se va cuando entra el ratón. */
+      .touch { position: absolute; z-index: 2; top: 60%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #ffffff8c; box-shadow: 0 0 0 1.5px #1018278c, 0 8px 20px #031a2166; opacity: 0; pointer-events: none; --hx: 46px; --hy: 70px; }
+      .touch::after { content: ""; position: absolute; inset: -1px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #10182766; opacity: 0; }
+      .lap .touch { top: 46%; width: 30px; height: 30px; margin: -15px 0 0 -15px; --hx: 170px; --hy: 110px; background: none; box-shadow: none; }
+      .lap .touch::before { content: ""; position: absolute; top: 50%; left: 50%; width: 24px; height: 24px; margin: -2px 0 0 -4px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l15 9.6-6.7 1.4 4 7.6-2.8 1.5-4-7.7L4 19z' fill='%23fff' stroke='%23101827' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat; }
+      .hint { position: absolute; z-index: 2; bottom: 22%; left: 50%; display: flex; align-items: center; gap: 8px; padding: 9px 16px 9px 12px; border-radius: 999px; background: #fff; color: #111; box-shadow: 0 0 0 2px #111, 0 12px 30px #000a; font: 800 14px/1.2 system-ui, sans-serif; white-space: nowrap; opacity: 0; transform: translate(-50%, 8px) scale(.9); transition: opacity .3s, transform .4s cubic-bezier(.3, 1.6, .5, 1); pointer-events: none; }
+      .hint::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--c); color: var(--c); box-shadow: 0 0 0 0 currentColor; animation: dot 1.4s ease-out infinite; }
+      .lap .hint { bottom: 18px; font-size: 15px; }
+      .on .dm.live:not(.used) .hint { opacity: 1; transform: translate(-50%, 0); transition-delay: .6s; animation: glow 2.2s ease-in-out 1.2s infinite; }
+      @keyframes glow { 0%, 100% { box-shadow: 0 0 0 2px #111, 0 12px 30px #000a, 0 0 0 0 #fff; } 50% { box-shadow: 0 0 0 2px #111, 0 12px 30px #000a, 0 0 0 10px transparent, 0 0 26px 6px #ffffffb3; } }
+      @keyframes dot { 0% { box-shadow: 0 0 0 0 currentColor; } 100% { box-shadow: 0 0 0 8px transparent; } }
+      .on .dm.live:not(.used) .touch { animation: tap 5s ease-in-out .9s 3 both; }
+      .on .dm.live:not(.used) .touch::after { animation: ripple 5s linear .9s 3 both; }
+      @keyframes tap { 0% { opacity: 0; transform: translate(var(--hx), var(--hy)) scale(1.12); } 10%, 18% { opacity: 1; transform: none; } 14% { opacity: 1; transform: scale(.8); } 40%, 48% { opacity: 1; transform: translate(calc(var(--hx) * -1), calc(var(--hy) * -1)); } 44% { opacity: 1; transform: translate(calc(var(--hx) * -1), calc(var(--hy) * -1)) scale(.8); } 70%, 78% { opacity: 1; transform: translate(calc(var(--hx) * .8), calc(var(--hy) * -.5)); } 74% { opacity: 1; transform: translate(calc(var(--hx) * .8), calc(var(--hy) * -.5)) scale(.8); } 90%, 100% { opacity: 0; transform: translate(calc(var(--hx) * .8), calc(var(--hy) * -.5)); } }
+      @keyframes ripple { 0%, 13.9%, 26.1%, 43.9%, 56.1%, 73.9%, 86.1%, 100% { opacity: 0; transform: none; } 14%, 44%, 74% { opacity: .9; transform: none; } 26%, 56%, 86% { opacity: 0; transform: scale(2.4); } }
+      @media (prefers-reduced-motion: reduce) { .on .dm.live:not(.used) .touch, .on .dm.live:not(.used) .touch::after { animation: none; } .on .dm.live:not(.used) .touch { opacity: 1; } .hint, .hint::before { animation: none !important; } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+    </style>
+    <style id="dcss"></style>
   </head>
   <body>
-    <svg class="sprite" aria-hidden="true" focusable="false">
-      <symbol id="i-out" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5" /></symbol>
-      <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v9M4.5 8.5 8 12l3.5-3.5M3.5 14h9" /></symbol>
-      <symbol id="i-code" viewBox="0 0 16 16"><path d="M5.5 4.5 2 8l3.5 3.5M10.5 4.5 14 8l-3.5 3.5" /></symbol>
-      <symbol id="i-map" viewBox="0 0 16 16"><path d="M2.5 3.5h4v4h-4zM9.5 8.5h4v4h-4zM4.5 7.5v3.5h5" /></symbol>
-    </svg>
-    <a class="skip-link" href="#main">Saltar a los proyectos</a>
-    <div class="frame">
-      <header class="me">
-        <h1 class="who">Carlos <span>Sanz Tomero</span></h1>
-        <p class="where">Ingeniero de software · Madrid</p>
-        <p class="role">Diseño sistemas. <span>Construyo productos.</span></p>
-        <p class="bio">Backend con Java y Spring Boot, llevado hasta el último clic. Cuatro proyectos para probar aquí, sin registro.</p>
-        <div class="skills">
-          <h2 class="lbl">Con lo que trabajo</h2>
-          <ul class="chips"><li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>React</li><li>TypeScript</li></ul>
-        </div>
-        <nav class="contact" aria-label="Contacto y perfiles">
-          <a class="cta" href="mailto:raclosdev@gmail.com">Hablemos</a>
-          <a class="cta cta-line" href="assets/CV_Carlos_Sanz_Tomero.pdf" download="CV_Carlos_Sanz_Tomero.pdf">Descargar CV<svg class="ico"><use href="#i-down" /></svg></a>
-          <span class="soc">
-            <a href="https://github.com/RaclosDev" target="_blank" rel="noopener noreferrer">GitHub<svg class="ico"><use href="#i-out" /></svg></a>
-            <a href="https://www.linkedin.com/in/carlos-sanz-tomero/" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="ico"><use href="#i-out" /></svg></a>
-          </span>
-        </nav>
-      </header>
-      <div class="work">
-        <div class="picks" role="tablist" aria-label="Proyectos">
-          <button class="tab" role="tab" type="button" id="tab-ascension" aria-controls="panel-ascension" aria-selected="true" data-app="ascension" data-kind="phone">
-            <img class="tab-ico" src="assets/icons/ascension.webp" alt="" width="56" height="56" decoding="async" />
-            <span class="tab-txt"><span class="tab-name">Ascension</span><span class="tab-cat">Entreno y nutrición</span></span>
-          </button>
-          <button class="tab" role="tab" type="button" id="tab-loopdeck" aria-controls="panel-loopdeck" aria-selected="false" tabindex="-1" data-app="loopdeck" data-kind="phone">
-            <img class="tab-ico" src="assets/icons/loopdeck.webp" alt="" width="56" height="56" decoding="async" />
-            <span class="tab-txt"><span class="tab-name">LoopDeck</span><span class="tab-cat">Estudio y repaso</span></span>
-          </button>
-          <button class="tab" role="tab" type="button" id="tab-porrapp" aria-controls="panel-porrapp" aria-selected="false" tabindex="-1" data-app="porrapp" data-kind="phone">
-            <img class="tab-ico" src="assets/icons/porrapp.webp" alt="" width="56" height="56" decoding="async" />
-            <span class="tab-txt"><span class="tab-name">PorrApp</span><span class="tab-cat">Porras con amigos</span></span>
-          </button>
-          <button class="tab" role="tab" type="button" id="tab-portfolio" aria-controls="panel-portfolio" aria-selected="false" tabindex="-1" data-app="portfolio" data-kind="laptop">
-            <img class="tab-ico" src="assets/icons/portfolio.webp" alt="" width="56" height="56" decoding="async" />
-            <span class="tab-txt"><span class="tab-name">Portfolio Tracker</span><span class="tab-cat">Inversión y cartera</span></span>
-          </button>
-        </div>
-        <main id="main" class="plan" data-kind="phone">
-          <article class="sheet" role="tabpanel" id="panel-ascension" aria-labelledby="tab-ascension">
-            <div class="s-head">
-              <h2>Ascension</h2>
-              <p class="claim">El progreso tiene muchas piezas.</p>
-              <p class="desc">Series, cargas, comidas y seguimiento en un mismo lugar. Un espacio personal para entrenar y otro para acompañar a tus atletas como entrenador.</p>
-            </div>
-            <div class="s-more">
-              <div class="cols">
-                <div>
-                  <h3 class="lbl">Qué puedes hacer</h3>
-                  <ul class="notes">
-                  <li>Registra entrenos y conserva la sesión en curso.</li>
-                  <li>Planifica la nutrición y estima una comida a partir de una foto.</li>
-                  <li>Gestiona atletas, programas y seguimientos semanales.</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="lbl">Dentro del código</h3>
-                  <ol class="details">
-                  <li><span class="num" aria-hidden="true">01</span>Persistencia en IndexedDB</li>
-                  <li><span class="num" aria-hidden="true">02</span>Permisos entre entrenador y atleta</li>
-                  <li><span class="num" aria-hidden="true">03</span>Escrituras idempotentes</li>
-                  <li><span class="num" aria-hidden="true">04</span>Acceso con passkeys</li>
-                  </ol>
-                </div>
-              </div>
-              <ul class="chips stack" aria-label="Stack"><li>Java 21</li><li>Spring Boot 4.1</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL</li></ul>
-              <p class="actions">
-                <a class="btn" href="https://ascension.raclos.es/demo" target="_blank" rel="noopener noreferrer">Abrir a pantalla completa<svg class="ico"><use href="#i-out" /></svg></a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/ascension-tracker" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-code" /></svg>Ver el código</a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/ascension-tracker/blob/main/docs/arquitectura.md" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-map" /></svg>Arquitectura</a>
-              </p>
-            </div>
-          </article>
-          <article class="sheet" role="tabpanel" id="panel-loopdeck" aria-labelledby="tab-loopdeck" hidden>
-            <div class="s-head">
-              <h2>LoopDeck</h2>
-              <p class="claim">Estudiar hoy. Recordarlo después.</p>
-              <p class="desc">Mazos, apuntes y tests conectados. La repetición espaciada organiza el próximo repaso y el tutor trabaja con el contenido que estás estudiando.</p>
-            </div>
-            <div class="s-more">
-              <div class="cols">
-                <div>
-                  <h3 class="lbl">Qué puedes hacer</h3>
-                  <ul class="notes">
-                  <li>Repasa tarjetas con FSRS-5 y ajusta el próximo intervalo.</li>
-                  <li>Consulta apuntes DOCX y practica con tests.</li>
-                  <li>Genera tarjetas y resuelve dudas con un tutor por mazo.</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="lbl">Dentro del código</h3>
-                  <ol class="details">
-                  <li><span class="num" aria-hidden="true">01</span>Planificación de repasos en el backend</li>
-                  <li><span class="num" aria-hidden="true">02</span>Repasos guardados sin duplicados</li>
-                  <li><span class="num" aria-hidden="true">03</span>Continuidad de las sesiones de estudio</li>
-                  <li><span class="num" aria-hidden="true">04</span>Gemini integrado desde el servidor</li>
-                  </ol>
-                </div>
-              </div>
-              <ul class="chips stack" aria-label="Stack"><li>Java 21</li><li>Spring Boot 4.1</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL</li></ul>
-              <p class="actions">
-                <a class="btn" href="https://loopdeck.raclos.es/demo" target="_blank" rel="noopener noreferrer">Abrir a pantalla completa<svg class="ico"><use href="#i-out" /></svg></a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/loopdeck" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-code" /></svg>Ver el código</a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/loopdeck/blob/main/docs/arquitectura.md" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-map" /></svg>Arquitectura</a>
-              </p>
-            </div>
-          </article>
-          <article class="sheet" role="tabpanel" id="panel-porrapp" aria-labelledby="tab-porrapp" hidden>
-            <div class="s-head">
-              <h2>PorrApp</h2>
-              <p class="claim">La jornada termina. La liga sigue.</p>
-              <p class="desc">Predicciones con amigos jornada a jornada, el cuadro del Mundial, porras de UFC y ligas de póker. Cada acierto mueve la clasificación.</p>
-            </div>
-            <div class="s-more">
-              <div class="cols">
-                <div>
-                  <h3 class="lbl">Qué puedes hacer</h3>
-                  <ul class="notes">
-                  <li>Crea una liga, invita a tus amigos y predice cada jornada.</li>
-                  <li>Sigue la clasificación en directo y rellena el cuadro del Mundial.</li>
-                  <li>Monta ligas de póker con reloj de ciegas, premios y estadísticas.</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="lbl">Dentro del código</h3>
-                  <ol class="details">
-                  <li><span class="num" aria-hidden="true">01</span>Reglas de puntuación en el backend</li>
-                  <li><span class="num" aria-hidden="true">02</span>Cierre de predicciones</li>
-                  <li><span class="num" aria-hidden="true">03</span>Sincronización de resultados</li>
-                  <li><span class="num" aria-hidden="true">04</span>Ranking en directo por WebSocket</li>
-                  </ol>
-                </div>
-              </div>
-              <ul class="chips stack" aria-label="Stack"><li>Java 21</li><li>Spring Boot 4.1</li><li>React 19</li><li>PostgreSQL</li><li>WebSocket</li></ul>
-              <p class="actions">
-                <a class="btn" href="https://porrapp.app/demo" target="_blank" rel="noopener noreferrer">Abrir a pantalla completa<svg class="ico"><use href="#i-out" /></svg></a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/porrApp" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-code" /></svg>Ver el código</a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/porrApp/blob/main/docs/arquitectura.md" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-map" /></svg>Arquitectura</a>
-              </p>
-            </div>
-          </article>
-          <article class="sheet" role="tabpanel" id="panel-portfolio" aria-labelledby="tab-portfolio" hidden>
-            <div class="s-head">
-              <h2>Portfolio Tracker</h2>
-              <p class="claim">De cada operación a la cartera completa.</p>
-              <p class="desc">Una herramienta personal para vigilar acciones, ETF y fondos, seguir niveles de compra y entender una cartera a partir de su registro de operaciones.</p>
-            </div>
-            <div class="s-more">
-              <div class="cols">
-                <div>
-                  <h3 class="lbl">Qué puedes hacer</h3>
-                  <ul class="notes">
-                  <li>Busca por nombre o ISIN y fija niveles de compra con avisos push.</li>
-                  <li>Consulta posiciones, dividendos y distribución de la cartera.</li>
-                  <li>Importa operaciones de Excel y registra traspasos entre fondos.</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="lbl">Dentro del código</h3>
-                  <ol class="details">
-                  <li><span class="num" aria-hidden="true">01</span>Posiciones por lotes FIFO</li>
-                  <li><span class="num" aria-hidden="true">02</span>Fuentes de mercado con caché</li>
-                  <li><span class="num" aria-hidden="true">03</span>Copias automáticas y restauración</li>
-                  <li><span class="num" aria-hidden="true">04</span>Testcontainers sobre PostgreSQL</li>
-                  </ol>
-                </div>
-              </div>
-              <ul class="chips stack" aria-label="Stack"><li>Java 21</li><li>Spring Boot 4.1</li><li>React 19</li><li>TypeScript</li><li>PostgreSQL</li></ul>
-              <p class="actions">
-                <a class="btn" href="https://cartera.raclos.es/demo" target="_blank" rel="noopener noreferrer">Abrir a pantalla completa<svg class="ico"><use href="#i-out" /></svg></a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/portfolio-tracker" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-code" /></svg>Ver el código</a>
-                <a class="btn btn-ghost" href="https://github.com/RaclosDev/portfolio-tracker/blob/main/docs/arquitectura.md" target="_blank" rel="noopener noreferrer"><svg class="ico"><use href="#i-map" /></svg>Arquitectura</a>
-              </p>
-            </div>
-          </article>
-          <section class="stage" aria-label="Demo en vivo">
-            <figure class="device phone is-active" data-app="ascension" data-src="https://ascension.raclos.es/demo/dashboard" data-local="http://localhost:5302/demo/dashboard">
-              <div class="body">
-                <div class="screen">
-                  <img class="poster" src="assets/screens/ascension-workout.webp" alt="Ascension: entrenamiento en curso" width="860" height="1864" fetchpriority="high" decoding="async" />
-                  <span class="splash" aria-hidden="true"><img src="assets/icons/ascension.webp" alt="" width="56" height="56" decoding="async" /></span>
-                  <span class="open" aria-hidden="true"><svg class="ico"><use href="#i-out" /></svg></span>
-                  <span class="touch" aria-hidden="true"></span>
-                </div>
-              </div>
-            </figure>
-            <figure class="device phone" data-app="loopdeck" data-src="https://loopdeck.raclos.es/demo" data-local="http://localhost:5303/demo">
-              <div class="body">
-                <div class="screen">
-                  <img class="poster" src="assets/screens/loopdeck-decks.webp" alt="LoopDeck: biblioteca de mazos" width="860" height="1864" loading="lazy" decoding="async" />
-                  <span class="splash" aria-hidden="true"><img src="assets/icons/loopdeck.webp" alt="" width="56" height="56" decoding="async" /></span>
-                  <span class="open" aria-hidden="true"><svg class="ico"><use href="#i-out" /></svg></span>
-                  <span class="touch" aria-hidden="true"></span>
-                </div>
-              </div>
-            </figure>
-            <figure class="device phone" data-app="porrapp" data-src="https://porrapp.app/demo" data-local="http://localhost:5301/demo">
-              <div class="body">
-                <div class="screen">
-                  <img class="poster" src="assets/screens/porrapp-league.webp" alt="PorrApp: jornada de la liga" width="860" height="1864" loading="lazy" decoding="async" />
-                  <span class="splash" aria-hidden="true"><img src="assets/icons/porrapp.webp" alt="" width="56" height="56" decoding="async" /></span>
-                  <span class="open" aria-hidden="true"><svg class="ico"><use href="#i-out" /></svg></span>
-                  <span class="touch" aria-hidden="true"></span>
-                </div>
-              </div>
-            </figure>
-            <figure class="device laptop" data-app="portfolio" data-src="https://cartera.raclos.es/demo" data-local="http://localhost:5304/demo">
-              <div class="body">
-                <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>cartera.raclos.es/demo</span></div>
-                <div class="screen">
-                  <img class="poster" src="assets/screens/portfolio-summary.webp" alt="Portfolio Tracker: resumen de cartera" width="1920" height="1200" loading="lazy" decoding="async" />
-                  <span class="splash" aria-hidden="true"><img src="assets/icons/portfolio.webp" alt="" width="56" height="56" decoding="async" /></span>
-                  <span class="open" aria-hidden="true"><svg class="ico"><use href="#i-out" /></svg></span>
-                  <span class="touch" aria-hidden="true"></span>
-                </div>
-              </div>
-            </figure>
-          </section>
-        </main>
-      </div>
-    </div>
+    <div id="root"></div>
+    <noscript>
+      <h1>Carlos Sanz Tomero · Ingeniero de software</h1>
+      <p>Ascension, LoopDeck, PorrApp y Portfolio Tracker: <a href="https://github.com/RaclosDev">código en GitHub</a> · <a href="assets/CV_Carlos_Sanz_Tomero.pdf">CV</a> · <a href="mailto:raclosdev@gmail.com">raclosdev@gmail.com</a></p>
+    </noscript>
+    <script src="site.js"></script>
+    <script src="baraja.js"></script>
+    <script>
+      LAB.start();
+    </script>
   </body>
 </html>
