@@ -36,10 +36,10 @@ LAB.add({
     transform:translate(calc(var(--r)*var(--x)),calc(var(--r)*var(--o)*-1));z-index:calc(4 - var(--r));filter:brightness(calc(1 - var(--r)*.1));box-shadow:0 -8px 22px -10px #000c;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .5s}
   .cd:not(.on):hover{filter:brightness(1)}
   .tb{flex:none;height:var(--o);display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;white-space:nowrap}
-  .tb img{width:20px;height:20px;border-radius:5px;flex:none}.tb span{font-weight:400;opacity:.6}
+  .tb img{width:20px;height:20px;border-radius:5px;flex:none}.tb span{font-weight:400;opacity:.75}
   .tb .pg{margin-left:auto;padding:.3em .7em;border-radius:999px;background:#1b1a17;color:#f4eddd;opacity:1;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;display:none}.on .tb .pg{display:block;margin-right:max(0px,calc(var(--fw) - 10px))}
   .pile{--o:clamp(34px,5.4vh,42px)}
-  .cd:not(.on) .tx{pointer-events:none}
+  .cd:not(.on) .tx{pointer-events:none;visibility:hidden;transition:opacity .25s,visibility 0s .25s}.cd :focus-visible{outline-color:#1b1a17}
   .pile{--fw:calc(var(--o)*var(--f3)*1.14);--fh:calc(var(--o)*var(--f3));transition:--f3 .4s cubic-bezier(.3,.7,.2,1);animation:peel3 5s cubic-bezier(.4,0,.2,1) 1.2s infinite}
   .pile.hv{animation:none;transition:none}
   .cd.on{background:linear-gradient(to bottom left,#0000 calc(50% + 1px),#f4eddd calc(50% + 2.4px)) top right/var(--fw) var(--fh) no-repeat,linear-gradient(#f4eddd 0 0) left/calc(100% - var(--fw) + .5px) 100% no-repeat,linear-gradient(#f4eddd 0 0) bottom/100% calc(100% - var(--fh) + .5px) no-repeat;box-shadow:none;filter:brightness(1) drop-shadow(0 -1px 1.5px #0000002e)}
@@ -50,7 +50,7 @@ LAB.add({
   .tx{flex:1;justify-content:center;min-height:0;opacity:0;transition:opacity .25s}.on .tx{opacity:1;transition-delay:.25s}
   .on .tx>*{animation:rise3 .6s cubic-bezier(.2,.7,.2,1) both}.on .tx>:nth-child(2){animation-delay:0.310s}.on .tx>:nth-child(3){animation-delay:0.355s}.on .tx>:nth-child(4){animation-delay:0.400s}.on .tx>:nth-child(5){animation-delay:0.445s}.on .tx>:nth-child(6){animation-delay:0.490s}.on .tx>:nth-child(7){animation-delay:0.535s}
   .k{display:none}h2{font-family:Anton,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}h2 .dt{font-style:normal;color:var(--c);transition:color .4s}
-  .stage{isolation:isolate;transform:translateY(14px) scale(.94)}.stage.on{transform:none}
+  .stage{isolation:isolate;transform:translateY(14px) scale(.94)}.stage.on{transform:none}.fr{place-items:start center}
   .stage::before{content:"";position:absolute;inset:14% 10%;z-index:-1;border-radius:50%;background:var(--c);opacity:.35;filter:blur(70px)}`,
   raw: `@property --f3{syntax:"<number>";inherits:true;initial-value:0}@keyframes rise3{from{opacity:0;transform:translateY(10px)}}@keyframes peel3{0%,50%,100%{--f3:0}68%{--f3:2.4}78%{--f3:2.15}88%{--f3:2.15}}`,
   mob: `.mn,&.wide .mn{flex:1;display:flex;flex-direction:column;gap:10px}.pile{flex:none;height:262px;--o:26px;--x:6px}.mn .deck{flex:1;min-height:0}.cd{padding:0 14px 10px}.tb span{display:none}`,
