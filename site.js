@@ -139,25 +139,26 @@ const probe = (u) =>
   (probes[u] ??= !HERE ? Promise.resolve(true) : fetch(u, { mode: "no-cors", signal: AbortSignal.timeout(3000) }).then(() => true, () => false));
 const fit = (fig) => fig.style.setProperty("--k", fig.firstElementChild.clientWidth / (fig.classList.contains("lap") ? 1440 : 402));
 const RO = new ResizeObserver((es) => es.forEach((e) => fit(e.target.parentElement)));
+// Devuelve una promesa que se cumple cuando la demo ha cargado (o se ha dado por perdida).
 const live = (fig) => {
-  if (fig.dataset.on || !CAN.matches) return;
+  if (fig.dataset.on || !CAN.matches) return fig.ready;
   fig.dataset.on = 1;
   const a = D.apps.find((x) => x.id === fig.dataset.app);
   const u = a.live[HERE ? 1 : 0];
-  probe(u).then((ok) => {
-    if (!fig.isConnected) return;
-    if (!ok) return fig.classList.add("off");
+  return (fig.ready = probe(u).then((ok) => new Promise((done) => {
+    if (!fig.isConnected) return done();
+    if (!ok) return fig.classList.add("off"), done();
     const f = document.createElement("iframe");
     f.title = "Demo de " + a.name;
     f.allow = "clipboard-write";
     f.src = u;
-    f.onload = () => fig.classList.add("live");
+    f.onload = () => (fig.classList.add("live"), done());
     // Si tarda demasiado, se ofrece abrirla aparte (y si al final carga, el aviso se va solo).
-    setTimeout(() => fig.classList.contains("live") || fig.classList.add("off"), 12000);
+    setTimeout(() => (fig.classList.contains("live") || fig.classList.add("off"), done()), 12000);
     fig.firstElementChild.append(f);
     RO.observe(fig.firstElementChild);
     fit(fig);
-  });
+  })));
 };
 
 // Vista de la demo de un proyecto: móvil o web. Se guarda en el proyecto, así que se mantiene al cambiar de diseño.
@@ -226,6 +227,11 @@ const sel = (root, signal, cb) => {
     if (e.key === "ArrowUp") go(cur - 1);
   }, { signal });
   go(0);
+  // Cuando la demo visible ha cargado, las demás se cargan por detrás, una tras otra: al cambiar de proyecto ya están listas.
+  [...root.querySelectorAll(".dm")].reduce(
+    (prev, fig) => prev.then(() => signal?.aborted || live(fig)),
+    Promise.resolve(root.querySelector(".dm[data-on]")?.ready),
+  );
 };
 
 // Estilo de partida (dentro de #root): cada diseño lo pisa. MOB va al final y recoloca en móvil.
