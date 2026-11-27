@@ -51,7 +51,7 @@ const D = {
       feats: ["Porras de fútbol, NBA, F1, UFC, tenis, LoL y más, con resultados oficiales sincronizados y puntos al momento", "Compite por jornadas, cuadro completo, eliminatorias, superviviente o Grandes Premios", "Ligas de póker con reloj de ciegas, modo TV, recompras, premios, pagos y estadísticas con ROI y rachas", "Torneos propios en liga o eliminatoria, con enlace o QR para seguirlos sin registro", "Resultados y clasificación en directo, y en cuanto empieza cada partido, ves qué ha elegido cada uno"],
       stack: ["Java 21", "Spring Boot 4.1", "React 19", "PostgreSQL", "WebSocket"],
       demo: "https://porrapp.app/demo", code: "https://github.com/RaclosDev/porrApp",
-      shots: ["league", "worldcup-bracket", "worldcup-ranking"],
+      shots: ["league", "ranking", "bracket"],
     },
     {
       id: "loopdeck", name: "LoopDeck", cat: "Estudio y repaso", color: "#2f6bff",
